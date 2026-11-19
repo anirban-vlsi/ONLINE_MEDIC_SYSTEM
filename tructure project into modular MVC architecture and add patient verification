@@ -1,0 +1,41 @@
+ migration_script.sql                               |  25 [32m+[m
+ src/java/common/util/DBConnection.java             |  41 [32m++[m
+ src/java/controller/patient/AddPatientServlet.java |  94 [32m+[m[31m--[m
+ .../controller/patient/PatientLoginServlet.java    |  26 [32m+[m[31m-[m
+ .../controller/patient/PatientLogoutServlet.java   |  12 [32m+[m[31m-[m
+ .../controller/patient/PatientProfileServlet.java  |  33 [32m+[m[31m-[m
+ .../patient/PatientRegistrationServlet.java        |  29 [32m+[m[31m-[m
+ .../controller/patient/ProfilePictureServlet.java  |  95 [32m+++[m
+ .../patient/UploadProfilePictureServlet.java       | 125 [32m++++[m
+ src/java/dao/UserDAO.java                          |  89 [31m---[m
+ src/java/dao/{ => patient}/PatientDAO.java         | 130 [32m++[m[31m--[m
+ src/java/dao/patient/UserDAO.java                  | 276 [32m+++++++++[m
+ src/java/model/{ => patient}/Patient.java          |  33 [32m+[m[31m-[m
+ src/java/model/{ => patient}/User.java             |  15 [32m+[m[31m-[m
+ src/java/service/UserService.java                  | 109 [31m----[m
+ src/java/service/{ => patient}/PatientService.java |  35 [32m+[m[31m-[m
+ src/java/service/patient/UserService.java          | 219 [32m+++++++[m
+ src/java/util/DBConnection.java                    |  34 [31m-[m
+ web/PATIENT_SIGNUP_PAGE.html                       | 168 [31m-----[m
+ web/WEB-INF/web.xml                                |  12 [32m+[m[31m-[m
+ web/css/style.css                                  | 684 [32m+++++++++++++++++++++[m
+ web/index.html                                     | 304 [32m+++++[m[31m----[m
+ web/js/common.js                                   |  14 [32m+[m
+ web/modules/patient/add_patient.html               | 201 [32m++++++[m
+ web/modules/patient/my_appointments.jsp            |  83 [32m+++[m
+ web/modules/patient/my_patients.jsp                | 125 [32m++++[m
+ web/modules/patient/my_prescriptions.jsp           |  83 [32m+++[m
+ web/modules/patient/patient_dashboard.jsp          | 337 [32m++++++++++[m
+ web/modules/patient/patient_login.html             | 128 [32m++++[m
+ web/modules/patient/patient_login.jsp              | 131 [32m++++[m
+ web/modules/patient/patient_profile.jsp            | 125 [32m++++[m
+ web/modules/patient/patient_signup.jsp             | 230 [32m+++++++[m
+ web/patient/add_patient.html                       | 126 [31m----[m
+ web/patient/my_appointments.jsp                    |  47 [31m--[m
+ web/patient/my_patients.jsp                        |  84 [31m---[m
+ web/patient/my_prescriptions.jsp                   |  46 [31m--[m
+ web/patient/patient_dashboard.jsp                  |  85 [31m---[m
+ web/patient/patient_login.html                     |  84 [31m---[m
+ web/patient/patient_login.jsp                      |  56 [31m--[m
+ web/patient/patient_profile.jsp                    |  50 [31m--[m
+ 40 files changed, 3289 insertions(+), 1334 deletions(-)

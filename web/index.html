@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Medical System - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .portal-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+        .portal-card {
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 26px 22px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.2s ease-in-out;
+            box-shadow: var(--shadow-sm);
+        }
+        .portal-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+        .portal-icon {
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="navbar-brand">
+            <span class="cross-icon">&#10010;</span> Online Medical System
+        </a>
+        <nav>
+            <ul class="navbar-nav">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portals">Portals</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="modules/patient/patient_login.jsp" class="btn btn-outline" style="padding: 6px 14px;">Patient</a></li>
+                <li><a href="modules/doctor/doctor_login.jsp" class="btn btn-primary" style="padding: 6px 14px;">Doctor</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Welcome Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">Online Medical System</h1>
+            <p class="hero-lead">
+                A unified, secure, and accessible digital healthcare ecosystem connecting patients, verified doctors, automated pharmacy fulfillment, and 24/7 emergency fleet dispatch.
+            </p>
+        </section>
+
+        <!-- Public Service Portals (Patient & Doctor) -->
+        <section class="card" id="portals">
+            <div class="card-header text-center">
+                <h2 class="page-title" style="font-size: 1.45rem;">Select Your Portal to Get Started</h2>
+                <p class="page-subtitle">Access your specialized clinical workspace or patient health services</p>
+            </div>
+
+            <div class="portal-grid-2">
+                <!-- 1. Patient Portal -->
+                <div class="portal-card" style="border-top: 4px solid var(--primary-color);">
+                    <div>
+                        <div class="portal-icon" style="color: var(--primary-color);">&#128100;</div>
+                        <h3 class="role-card-title" style="margin-bottom: 8px;">Patient Portal</h3>
+                        <p class="role-card-desc" style="font-size: 0.92rem; margin-bottom: 18px;">
+                            Manage personal profiles, book clinic & home visit consultations, view official prescriptions, and order medicines online.
+                        </p>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <a href="modules/patient/patient_login.jsp" class="btn btn-primary btn-block">
+                            Patient Sign In &rarr;
+                        </a>
+                        <a href="modules/patient/patient_signup.jsp" class="btn btn-outline btn-block">
+                            Register as Patient
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. Doctor Portal -->
+                <div class="portal-card" style="border-top: 4px solid #2563eb;">
+                    <div>
+                        <div class="portal-icon" style="color: #2563eb;">&#9877;</div>
+                        <h3 class="role-card-title" style="margin-bottom: 8px;">Doctor Portal</h3>
+                        <p class="role-card-desc" style="font-size: 0.92rem; margin-bottom: 18px;">
+                            Review patient medical history, configure clinic & home visit schedules, issue prescriptions, and manage appointments.
+                        </p>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <a href="modules/doctor/doctor_login.jsp" class="btn btn-primary btn-block" style="background: #2563eb; border-color: #2563eb;">
+                            Doctor Sign In &rarr;
+                        </a>
+                        <a href="modules/doctor/doctor_signup.jsp" class="btn btn-outline btn-block">
+                            Doctor Registration
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integrated Healthcare Services Section -->
+        <section class="card" id="services">
+            <div class="card-header">
+                <h2 class="page-title" style="font-size: 1.3rem;">Integrated Healthcare Services</h2>
+                <p class="page-subtitle">Explore live healthcare capabilities across our unified system</p>
+            </div>
+
+            <div class="service-grid">
+                <div class="service-card" style="border-left-color: #059669;">
+                    <h3 style="font-size: 1.1rem; color: #059669; margin-bottom: 6px;">&#128138; Online Pharmacy Shop</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px;">
+                        Explore in-stock pharmaceutical medicines, review dosage forms, and order essential prescriptions online.
+                    </p>
+                    <a href="PharmacyCatalogServlet" class="btn btn-outline" style="padding: 5px 12px; font-size: 0.88rem; color: #059669; border-color: #059669;">
+                        Open Pharmacy Catalog &rarr;
+                    </a>
+                </div>
+
+                <div class="service-card" style="border-left-color: #dc2626;">
+                    <h3 style="font-size: 1.1rem; color: #dc2626; margin-bottom: 6px;">&#128657; Emergency Response</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px;">
+                        24/7 urgent medical dispatch with live automated ambulance assignment, priority triage, and incident tracking.
+                    </p>
+                    <a href="EmergencyRequestServlet" class="btn btn-outline" style="padding: 5px 12px; font-size: 0.88rem; color: #dc2626; border-color: #dc2626;">
+                        Request Emergency Assistance &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="card" id="contact">
+            <div class="card-header">
+                <h2 class="page-title" style="font-size: 1.3rem;">Contact & Support</h2>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 6px;">
+                <strong>Campus / Department:</strong> Computer Science & Information Technology Lab
+            </p>
+            <p style="color: var(--text-muted); margin-bottom: 6px;">
+                <strong>Support Email:</strong> support@onlinemedic.local
+            </p>
+            <p style="color: var(--text-muted);">
+                <strong>Emergency Helpline:</strong> Dial 108 / 112 (24/7 Dedicated Support)
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Online Medical System. All rights reserved. Developed with Java Servlets, JSP & MVC.</p>
+    </footer>
+
+    <script src="js/common.js"></script>
+</body>
+</html>
